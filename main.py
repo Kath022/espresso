@@ -9,7 +9,7 @@ class Wind(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi('interface.ui', self)
-        self.bd = sqlite3.connect('coffee.db')
+        self.bd = sqlite3.connect('data/coffee.db')
         self.show_table()
 
         self.add_window = AddCoffeeForm()
@@ -41,7 +41,7 @@ class Wind(QWidget):
 class AddCoffeeForm(QWidget):
     def __init__(self):
         super().__init__()
-        self.bd = sqlite3.connect('coffee.db')
+        self.bd = sqlite3.connect('data/coffee.db')
         uic.loadUi('addEditCoffeeForm.ui', self)
         KINDS = {
             'молотый': 'молотый',
